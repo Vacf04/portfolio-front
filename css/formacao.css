@@ -1,0 +1,83 @@
+.formacao-section {
+  padding: 5rem 0;
+}
+
+.formacao-content h1 {
+  font-size: 4rem;
+  font-family: var(--primary-font);
+  padding-bottom: 1rem;
+}
+
+.timeline {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.timeline::before {
+  content: "";
+  height: 100%;
+  width: 0.25rem;
+  background-color: var(--terciary-color);
+  position: absolute;
+  left: 17%;
+  top: 0;
+  border-radius: 0.25rem;
+}
+
+.timeline-block {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.timeline-block::before {
+  content: "";
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: var(--terciary-color);
+  position: absolute;
+  left: calc(17% - 0.625rem);
+  top: 0.675rem;
+}
+
+.timeline-block .curso,
+.timeline-block .instituicao {
+  margin-top: 0.5rem;
+}
+
+.timeline-block:nth-child(n + 2) {
+  margin-top: 2rem;
+}
+
+.timeline-block p {
+  max-width: 70ch;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 1100px) {
+  .timeline::before {
+    left: 18%;
+  }
+
+  .timeline-block::before {
+    left: calc(18% - 0.625rem);
+  }
+}
+
+@media (max-width: 850px) {
+  .timeline::before {
+    left: 0;
+  }
+
+  .timeline-block::before {
+    left: -0.625rem;
+  }
+
+  .timeline-block {
+    grid-template-columns: 1fr;
+    padding-left: 2rem;
+  }
+}

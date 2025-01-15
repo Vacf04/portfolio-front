@@ -1,0 +1,101 @@
+:root {
+  --primary-font: "Playfair Display", serif;
+  --secondary-font: "Roboto", sans-serif;
+  --primary-color: #fff;
+  --secondary-color: #222;
+  --secondary-color-ligther: #525252;
+  --terciary-color: #31511e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--primary-color);
+  color: var(--secondary-color-ligther);
+  font-family: var(--secondary-font);
+}
+
+h1,
+h2 {
+  color: var(--secondary-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@keyframes showDown {
+  from {
+    transform: translateY(-1.2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.show-down {
+  opacity: 0;
+}
+
+.show-down.active {
+  animation: showDown 0.6s forwards;
+}
+
+.negrito {
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.button {
+  display: block;
+  border: 0.15rem solid transparent;
+  background-color: var(--terciary-color);
+  color: var(--primary-color);
+  width: max-content;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  transition: 0.3s;
+  border-radius: 0.25rem;
+}
+
+.button:hover,
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #46712d;
+}
+
+footer .container p {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+@media (max-width: 550px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 65%;
+  }
+}
+
+@media (max-width: 350px) {
+  html {
+    font-size: 55%;
+  }
+}

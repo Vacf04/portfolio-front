@@ -1,0 +1,111 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--secondary-color);
+}
+
+.header nav ul {
+  display: flex;
+  gap: 3rem;
+}
+
+.header nav a {
+  transition: 0.3s;
+  padding: 3rem 0;
+  display: block;
+  font-size: 1.25rem;
+  position: relative;
+}
+
+.header nav a::after {
+  position: absolute;
+  content: "";
+  height: 0.12rem;
+  width: 0%;
+  background-color: var(--terciary-color);
+  left: 0;
+  top: 4.5rem;
+  transition: 0.3s;
+  border-radius: 0.25rem;
+}
+
+.header nav li:hover a::after {
+  width: 100%;
+}
+
+.header .logo {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.menu-button {
+  display: none;
+  position: relative;
+  z-index: 9;
+}
+
+.menu-button .line {
+  width: 3rem;
+  height: 0.3rem;
+  border-radius: 0.25rem;
+  background-color: var(--secondary-color);
+  transition: 0.3s;
+}
+
+.menu-button.active .line {
+  background-color: var(--primary-color);
+}
+
+.menu-button .line:nth-child(n + 2) {
+  margin-top: 0.5rem;
+}
+
+.menu-button.active .line:nth-child(1) {
+  display: none;
+}
+
+.menu-button.active .line:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.menu-button.active .line:nth-child(3) {
+  position: relative;
+  transform: rotate(45deg);
+  bottom: 0.8rem;
+}
+
+@media (max-width: 850px) {
+  .menu-button {
+    display: block;
+  }
+
+  .header nav ul {
+    display: none;
+  }
+
+  .header nav ul.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--secondary-color);
+    z-index: 5;
+    color: var(--primary-color);
+  }
+
+  .header nav ul.active a {
+    font-size: 4rem;
+    display: block;
+    text-align: center;
+  }
+
+  .header {
+    padding-top: 2rem;
+  }
+}
